@@ -7,6 +7,8 @@
 `nuget add mypackage.0.0.0.nupkg -source c:\temp\nuget`
 3) In Visual Studio (2019), add this folder to the avialable nuget servers
 
+Source: <https://medium.com/@churi.vibhav/creating-and-using-a-local-nuget-package-repository-9f19475d6af8>
+
 ## Config available Nuget Servers in Solution
 
 Add this a config file: <MySolution>\.nuget\NuGet.Config in the folder where <MySolution>.sln sits
