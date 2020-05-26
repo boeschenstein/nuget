@@ -30,3 +30,41 @@ Example config file:
   </packageSources>
 </configuration>
 ```
+
+## Create .NET Standard nuget
+
+<details>
+  <summary>Example for nuget config in csproj:</summary>
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  
+ <PropertyGroup>
+    <!-- where should the nuget package be created at -->
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    
+    <!-- nuget related properties -->
+    <Authors>Sayed Ibrahim Hashimi</Authors>
+    <Description>Sample library showing how to create a .NET library.</Description>
+    <Version>1.0.0</Version>
+    <Copyright>Copyright 2020 © Sayed Ibrahim Hashimi. All rights reserved.</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/sayedihashimi/sayedha.samplelibrary</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://raw.githubusercontent.com/sayedihashimi/sayedha.samplelibrary/master/assets/icon-120x120.png</PackageIconUrl>
+    <PackageIcon>icon-120x120.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="icon-120x120.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>
+```
+</details>
+
+https://devblogs.microsoft.com/visualstudio/creating-and-packaging-net-standard-library/
+
+Cross Platform Targeting: <https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting>
