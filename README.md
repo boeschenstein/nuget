@@ -1,5 +1,9 @@
 # nuget
 
+## CLI
+
+[CLI Reference](https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference)
+
 ## Install nupkg to Local Nuget Store
 
 1) create a folder c:\temp\nuget
@@ -8,6 +12,10 @@
 3) In Visual Studio (2019), add this folder to the avialable nuget servers
 
 Source: <https://medium.com/@churi.vibhav/creating-and-using-a-local-nuget-package-repository-9f19475d6af8>
+
+## get nuget from protected server
+
+`nuget install My.Cool.Nuget -source https://some.where.azure.com/company/_packaging/product/nuget/v3/index.json`
 
 ## Config available Nuget Servers in Solution
 
