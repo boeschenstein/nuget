@@ -76,3 +76,9 @@ Example config file:
 https://devblogs.microsoft.com/visualstudio/creating-and-packaging-net-standard-library/
 
 Cross Platform Targeting: <https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting>
+
+## Tipps and Tricks
+
+### nupkg contains source files instead of bin
+
+Wrong argument: give csproj-file instead of nuspec-file
