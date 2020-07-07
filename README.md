@@ -13,7 +13,7 @@
 
 Source: <https://medium.com/@churi.vibhav/creating-and-using-a-local-nuget-package-repository-9f19475d6af8>
 
-## get nuget from protected server
+## Get nuget from protected server
 
 `nuget install My.Cool.Nuget -source https://some.where.azure.com/company/_packaging/product/nuget/v3/index.json`
 
@@ -77,7 +77,52 @@ https://devblogs.microsoft.com/visualstudio/creating-and-packaging-net-standard-
 
 Cross Platform Targeting: <https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting>
 
+## nuget pack
+
+- use 'nuget pack' for .net framework
+- use 'dotnet pack' for .net standard and .net core (first: convert csproj to sdk-style and Migrate from packages.config to PackageReference)
+
+### examples
+
+`nuget.exe pack .\myApp\myProj.csproj -NonInteractive -OutputDirectory c:\temp\nuget -Properties Configuration=Release -IncludeReferencedProjects -Verbosity normal`
+
+"The -IncludeReferencedProject flag only really makes sense when your project is managing dependencies via packages.config file." According https://github.com/NuGet/Home/issues/5720
+
+`dotnet pack .\myApp\myProj.csproj --output c:\temp\nuget --configuration Release --verbosity normal`
+
+### Error NU5014 in `nuget pack`
+
+running this statement: 
+
+>nuget.exe pack .\myApp\myProj.csproj -NonInteractive -OutputDirectory c:\temp\nuget -Properties Configuration=release -IncludeReferencedProjects -Verbosity normal
+
+Referencing a .net Standard project gives this error:
+
+>Error NU5014: Error occurred when processing file 'C:\Work.proj\myApp\myProj.csproj': Unable to find 'bin\release\myApp\bin\release\'. Make sure the project has been built.
+
+Options to solve this issue:
+
+- refrence the .net Standard package by nuget, not by project reference
+- in my case, the b.dll had to refrence c.dll as nuget package reference, not as project reference: a.dll -> b.dll -> c.dll
+	if nuspec ist there, make sure the following depencency gets added to your nuspec in the nuget. If not, add this lines to nuspec (not needed: had been generated in my case)
+	```xml
+	<dependencies>
+      <dependency id="myProj" version="2.0.0" />
+    </dependencies>
+	```
+- remove argument -IncludeReferencedProjects (usually not recommended, because we usually want the references included)
+	-  "The -IncludeReferencedProject flag only really makes sense when your project is managing dependencies via packages.config file."
+		- according https://github.com/NuGet/Home/issues/5720
+- check open issue: https://github.com/NuGet/Home/issues/3891 (closed, but not fixed: https://github.com/dotnet/sdk/issues/6688)
+
 ## Tipps and Tricks
+
+### Clear all local caches
+
+In case of any nuget issues, clear all local nuget folders:
+
+`dotnet nuget locals all --clear`
+`nuget locals all -clear`
 
 ### nupkg contains source files instead of bin
 
