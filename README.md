@@ -126,6 +126,22 @@ In case of any nuget issues, clear all local nuget folders:
 
 More details about managing folders: https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders
 
+### install/restore error: Cycle detected
+
+Do not use the same name for folder and package (example: dotnet add package IdentityServer4 in Folder \IdentityServer4)
+
+```cmd
+c:\Work.proj\IdentityServer4>dotnet add package IdentityServer4
+  Determining projects to restore...
+  Writing C:\Users\bop\AppData\Local\Temp\tmp4852.tmp
+info : Adding PackageReference for package 'IdentityServer4' into project 'c:\Work.proj\IdentityServer4\IdentityServer4.csproj'.
+info : Restoring packages for c:\Work.proj\IdentityServer4\IdentityServer4.csproj...
+error: Cycle detected.
+error:   IdentityServer4 -> IdentityServer4 (>= 0.0.0).
+info : Package 'IdentityServer4' is compatible with all the specified frameworks in project 'c:\Work.proj\IdentityServer4\IdentityServer4.csproj'.
+error: Value cannot be null. (Parameter 'path1')
+```
+
 ### nuget pack error
 
 - Use the latest version of nuget.exe (Azure DevOps: use "Nuget Tool Installer")
