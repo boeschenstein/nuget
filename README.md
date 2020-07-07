@@ -80,7 +80,7 @@ Cross Platform Targeting: <https://docs.microsoft.com/en-us/dotnet/standard/libr
 ## nuget pack
 
 - use 'nuget pack' for .net framework
-- use 'dotnet pack' for .net standard and .net core (first: convert csproj to sdk-style and Migrate from packages.config to PackageReference)
+- use 'dotnet pack' for .net Standard and .net core (first: convert csproj to sdk-style and Migrate from packages.config to PackageReference)
 
 ### examples
 
@@ -121,8 +121,15 @@ Options to solve this issue:
 
 In case of any nuget issues, clear all local nuget folders:
 
-`dotnet nuget locals all --clear`
-`nuget locals all -clear`
+- `dotnet nuget locals all --clear`
+- `nuget locals all -clear`
+
+More details about managing folders: https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders
+
+### nuget pack error
+
+- Use the latest version of nuget.exe (Azure DevOps: use "Nuget Tool Installer")
+- for .net Standard, use `dotnet pack`
 
 ### nupkg contains source files instead of bin
 
