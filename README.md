@@ -150,3 +150,7 @@ error: Value cannot be null. (Parameter 'path1')
 ### nupkg contains source files instead of bin
 
 Wrong argument: give csproj-file instead of nuspec-file
+
+## Error 401 Unauthorized
+
+Login Visual Studio with target account (try to disable vpn first)
