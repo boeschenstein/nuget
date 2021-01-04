@@ -117,6 +117,22 @@ Options to solve this issue:
 
 ## Tipps and Tricks
 
+### Reinstall packages
+
+After updating framework or installing or updating nugets, it is reccommended to reinstall all packages:
+
+```ps
+Update-Package -Reinstall
+Update-Package -Reinstall -ProjectName Project.Name.Here
+Update-Package Package.Name.Here -Reinstall -ProjectName Project.Name.Here
+```
+
+### Binding
+
+> Binding redirects are added if your app or its components reference more than one version of the same assembly.
+
+<https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection?redirectedfrom=MSDN>
+
 ### Clear all local caches
 
 In case of any nuget issues, clear all local nuget folders:
@@ -151,6 +167,6 @@ error: Value cannot be null. (Parameter 'path1')
 
 Wrong argument: give csproj-file instead of nuspec-file
 
-## Error 401 Unauthorized
+### Error 401 Unauthorized
 
 Login Visual Studio with target account (try to disable vpn first)
