@@ -115,6 +115,10 @@ Options to solve this issue:
 		- according https://github.com/NuGet/Home/issues/5720
 - check open issue: https://github.com/NuGet/Home/issues/3891 (closed, but not fixed: https://github.com/dotnet/sdk/issues/6688)
 
+## Create your own nuget server
+	
+https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server
+
 ## Tipps and Tricks
 
 ### Reinstall packages
