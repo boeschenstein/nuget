@@ -174,3 +174,10 @@ Wrong argument: give csproj-file instead of nuspec-file
 ### Error 401 Unauthorized
 
 Login Visual Studio with target account (try to disable vpn first)
+
+### Linux
+
+Slow? performance issues? check this:
+Starting with .NET 8 SDK, verification is enabled by default. To opt out, set the environment variable DOTNET_NUGET_SIGNATURE_VERIFICATION to false.
+
+<https://learn.microsoft.com/en-us/dotnet/core/tools/nuget-signed-package-verification#linux>
