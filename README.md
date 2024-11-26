@@ -6,12 +6,18 @@
 
 ## Warning - outdated nugets
 
-`dotnet list package --include-transitive --deprecated`
+Show all packages
+
+```cs
+dotnet list package
+dotnet list package --include-transitive
+dotnet list package --include-transitive --deprecated
+```
 
 <https://learn.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu1901-nu1904>
 <[https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/#dotnet-nuget-audit-fix)>
 
-`dotnet nuget audit fix`
+soon: `dotnet nuget audit fix`
 
 ## Install nupkg to Local Nuget Store
 
