@@ -4,9 +4,12 @@
 
 [CLI Reference](https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference)
 
-## Audit
+## Warning - outdated nugets
 
-<https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/>
+`dotnet list package --include-transitive --deprecated`
+
+<https://learn.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu1901-nu1904>
+<[https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/#dotnet-nuget-audit-fix)>
 
 `dotnet nuget audit fix`
 
