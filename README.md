@@ -4,6 +4,12 @@
 
 [CLI Reference](https://docs.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference)
 
+## Audit
+
+<https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/>
+
+`dotnet nuget audit fix`
+
 ## Install nupkg to Local Nuget Store
 
 1) create a folder c:\temp\nuget
