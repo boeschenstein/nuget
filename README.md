@@ -196,3 +196,7 @@ Slow? performance issues? check this:
 Starting with .NET 8 SDK, verification is enabled by default. To opt out, set the environment variable DOTNET_NUGET_SIGNATURE_VERIFICATION to false.
 
 <https://learn.microsoft.com/en-us/dotnet/core/tools/nuget-signed-package-verification#linux>
+
+# Information
+
+- Cache (Linux, Windows) <https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders>
